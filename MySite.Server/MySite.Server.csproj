@@ -34,9 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MySite.Client\MySite.Client.csproj">
-      <EmbedInteropTypes>false</EmbedInteropTypes>
-    </ProjectReference>
+    <ProjectReference Include="..\MySite.Client\MySite.Client.csproj" />
   </ItemGroup>
 
 </Project>

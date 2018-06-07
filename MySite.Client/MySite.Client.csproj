@@ -13,12 +13,17 @@
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="0.4.0-preview1-10306" />
     <DotNetCliToolReference Include="Microsoft.AspNetCore.Blazor.Cli" Version="0.3.0" />
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="2.0.0" />
-    <Watch Include="**\*.cshtml"/>
+    <Watch Include="**\*.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Style\bootstrap.min.css" />
+    <Content Include="Style\bootstrap.min.css.map" />
+    <Content Include="Style\open-iconic-bootstrap.min.css" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Filter\" />
-    <Folder Include="Style\" />
   </ItemGroup>
 
   <ItemGroup>
