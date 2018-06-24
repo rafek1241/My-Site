@@ -5,8 +5,4 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="MySiteContext.cs" />
-  </ItemGroup>
 </Project>

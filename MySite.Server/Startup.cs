@@ -4,8 +4,11 @@ using Microsoft.AspNetCore.Blazor.Server;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MySite.Server.Models;
+using MySite.Server.Repositories;
 using Newtonsoft.Json.Serialization;
 
 namespace MySite.Server
@@ -22,15 +25,15 @@ namespace MySite.Server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<ApplicationDbContext>(options =>
-            //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
             //services.AddIdentity<ApplicationUser, IdentityRole>()
             //    .AddEntityFrameworkStores<ApplicationDbContext>()
             //    .AddDefaultTokenProviders();
             // Add application services.
             //services.AddTransient<IEmailSender, EmailSender>();
 
+            services.AddDbContext<MySiteContext>(options =>
+                options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MyDatabase;Trusted_Connection=True;"));
+            
             services.AddMvc().AddJsonOptions(options =>
             {
                 options.SerializerSettings.ContractResolver = new DefaultContractResolver();
@@ -45,7 +48,7 @@ namespace MySite.Server
                 });
             });
 
-            //services.AddMvc();
+            services.AddScoped<IMenuRepository, MenuRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,4 +1,4 @@
-﻿namespace MySite.Shared
+﻿namespace MySite.Shared.Models.Utils
 {
     public interface IResponseModel
     {

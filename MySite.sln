@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySite.Client", "MySite.Client\MySite.Client.csproj", "{07B6C8CA-88BA-457C-A1B5-FDEF604E58D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySite.Client", "MySite.Client\MySite.Client.csproj", "{07B6C8CA-88BA-457C-A1B5-FDEF604E58D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySite.Shared", "MySite.Shared\MySite.Shared.csproj", "{9841088B-B506-4BAD-9AE9-1B9051F276BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySite.Shared", "MySite.Shared\MySite.Shared.csproj", "{9841088B-B506-4BAD-9AE9-1B9051F276BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySite.Server", "MySite.Server\MySite.Server.csproj", "{F82582CC-66D4-4471-B40B-3A108C3F9CC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySite.Server", "MySite.Server\MySite.Server.csproj", "{F82582CC-66D4-4471-B40B-3A108C3F9CC9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Common", "0-Common", "{1C3AB1C6-74E6-4C76-95CF-D71DB064FB96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Client (frontend)", "1-Client (frontend)", "{5EC4974E-607C-4C59-8AF4-DD877743BFC2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Server (backend)", "2-Server (backend)", "{D345F164-0349-4478-92F0-0F952F8421BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +36,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{07B6C8CA-88BA-457C-A1B5-FDEF604E58D4} = {5EC4974E-607C-4C59-8AF4-DD877743BFC2}
+		{9841088B-B506-4BAD-9AE9-1B9051F276BC} = {1C3AB1C6-74E6-4C76-95CF-D71DB064FB96}
+		{F82582CC-66D4-4471-B40B-3A108C3F9CC9} = {D345F164-0349-4478-92F0-0F952F8421BE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8CE41E3E-F65F-42A8-8315-E32646272326}

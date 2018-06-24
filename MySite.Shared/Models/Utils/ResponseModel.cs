@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace MySite.Shared
+namespace MySite.Shared.Models.Utils
 {
     public class ResponseModel : IResponseModel
     {
