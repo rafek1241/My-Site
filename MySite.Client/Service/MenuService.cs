@@ -5,7 +5,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Blazor;
 using Microsoft.AspNetCore.Blazor.Components;
-using MySite.Shared;
+using MySite.Shared.Models;
+using MySite.Shared.Models.Utils;
 
 namespace MySite.Client.Service
 {
@@ -20,11 +21,11 @@ namespace MySite.Client.Service
             HttpClient = client;
         }
 
-        public async Task<List<Menu>> GetMenus()
+        public async Task<Menu[]> GetMenus()
         {
             var result = await HttpClient.GetJsonAsync<Menu[]>(_menuBaseUrl);
             Console.WriteLine(result.ToString());
-            return result.ToList();
+            return result;
         }
 
         public async Task<Menu> GetMenu(long menuId)

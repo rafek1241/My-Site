@@ -3,12 +3,11 @@
 ################################################################################
 
 /.vs
-/MySite.Client/bin/Debug/netstandard2.0
+/MySite.Client/bin
 /MySite.Client/obj
-/MySite.Client/MySite.Client.csproj.user
-/MySite.Server/bin/Debug/netcoreapp2.0
+/MySite.Server/bin
 /MySite.Server/obj
-/MySite.Server/MySite.Server.csproj.user
-/MySite.Shared/bin/Debug
+/MySite.Shared/bin
 /MySite.Shared/obj
 *.user
+/MySite.Client/node_modules

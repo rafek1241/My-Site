@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySite.Shared;
+using MySite.Shared.Models;
+using MySite.Shared.Models.Utils;
 
 namespace MySite.Client.Service
 {
     public interface IMenuService
     {
-        Task<List<Menu>> GetMenus();
+        Task<Menu[]> GetMenus();
 
         Task<Menu> GetMenu(long menuId);
 
