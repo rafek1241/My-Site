@@ -1,4 +1,12 @@
-﻿html, body, app {
+﻿$fa-font-path: "./webfonts";
+
+@import "font-awesome/fontawesome.scss";
+@import "font-awesome/fa-solid.scss";
+@import "font-awesome/fa-brands.scss";
+
+@import "homepage.scss";
+
+html, body, app {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     height: 100%;
 }
@@ -11,5 +19,3 @@ nav {
     z-index: 1000;
     position: relative;
 }
-
-@import "homepage.scss";
