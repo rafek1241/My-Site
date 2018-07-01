@@ -36,7 +36,8 @@ namespace MySite.Server
             
             services.AddMvc().AddJsonOptions(options =>
             {
-                options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
             });
 
             services.AddResponseCompression(options =>
