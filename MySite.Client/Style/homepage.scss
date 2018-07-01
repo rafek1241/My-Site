@@ -5,8 +5,31 @@
 
     blockquote {
         margin-right: 5vw;
+        position: relative;
+        z-index: 10;
 
-        .motto {
+        &:before, &:after {
+            @include fa-icon;
+            @extend .fas;
+            z-index: 5;
+            content: fa-content($fa-var-quote-right);
+            position: absolute;
+            opacity: 0.4;
+            @extend .fa-3x !optional;
+        }
+
+        &:before {
+            left: 0;
+            top: 0;
+        }
+
+        &:after {
+            right: 0;
+            bottom: 0;
+        }
+
+
+        p, footer {
             z-index: 1000;
             position: relative;
         }
@@ -21,12 +44,12 @@ $logo_line_height: 0.77;
     bottom: 0;
     left: 0;
     //pointer-events: none;
-    font-size: 60vh;
+    font-size: 100vh;
     line-height: $logo_line_height;
     overflow: hidden;
     padding-right: 15vh;
     padding-left: 0;
-    margin-left: -7vh;
+    margin-left: -10vh;
 
     .logo-extented {
         line-height: $logo_line_height;

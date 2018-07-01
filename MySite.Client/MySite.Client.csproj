@@ -25,4 +25,8 @@
     <ProjectReference Include="..\MySite.Shared\MySite.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Style\font-awesome\" />
+  </ItemGroup>
+
 </Project>
