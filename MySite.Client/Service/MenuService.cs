@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Blazor;
-using Microsoft.AspNetCore.Blazor.Components;
 using MySite.Shared.Models;
 using MySite.Shared.Models.Utils;
 
@@ -14,12 +12,12 @@ namespace MySite.Client.Service
     {
         private const string _menuBaseUrl = "/api/Menu";
 
-        public HttpClient HttpClient { get; private set; }
-
         public MenuService(HttpClient client)
         {
             HttpClient = client;
         }
+
+        public HttpClient HttpClient { get; }
 
         public async Task<Menu[]> GetMenus()
         {
@@ -47,7 +45,8 @@ namespace MySite.Client.Service
 
         public async Task<ResponseModel> EditMenu(long menuId, Menu menu)
         {
-            var response = await HttpClient.PutJsonAsync<ResponseModel>(_menuBaseUrl, new { MenuId = menuId, Menu = menu });
+            var response =
+                await HttpClient.PutJsonAsync<ResponseModel>(_menuBaseUrl, new {MenuId = menuId, Menu = menu});
 
             return response;
         }

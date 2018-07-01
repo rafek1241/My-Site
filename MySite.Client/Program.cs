@@ -7,7 +7,7 @@ namespace MySite.Client
 {
     public class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var serviceProvider = new BrowserServiceProvider(services =>
             {
