@@ -18,10 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Style\" />
+    <Watch Remove="Style\homepage.scss" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,5 +1,15 @@
-﻿$variable:#000;
+﻿html, body, app {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100%;
+}
 
 .main {
-    background:$variable;
+    height: calc(100% - 56px);
 }
+
+nav {
+    z-index: 1000;
+    position: relative;
+}
+
+@import "homepage.scss";
