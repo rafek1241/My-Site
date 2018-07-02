@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MySite.Shared
+namespace MySite.Shared.Models
 {
     public class NavLink
     {
@@ -14,7 +11,7 @@ namespace MySite.Shared
 
         public string Name { get; set; }
 
-        public Uri Link { get; set; }
+        public string Link { get; set; }
 
         public virtual ICollection<MenuNavLink> MenuNavLinks { get; set; }
     }

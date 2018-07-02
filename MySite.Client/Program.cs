@@ -7,12 +7,13 @@ namespace MySite.Client
 {
     public class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var serviceProvider = new BrowserServiceProvider(services =>
             {
                 // Add any custom services here
                 services.AddSingleton<IMenuService, MenuService>();
+                services.AddSingleton<IMottoService, MottoService>();
             });
 
             new BrowserRenderer(serviceProvider).AddComponent<App>("app");
