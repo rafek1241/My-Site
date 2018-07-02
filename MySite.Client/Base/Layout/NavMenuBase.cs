@@ -14,7 +14,7 @@ namespace MySite.Client.Base.Layout
 
         public Menu Menu { get; set; }
 
-        [Inject] public IMenuService MenuService { get; set; }
+        [Inject] public IMenuService Service { get; set; }
 
         public void ToggleNavMenu()
         {
@@ -23,7 +23,7 @@ namespace MySite.Client.Base.Layout
 
         protected override async Task OnInitAsync()
         {
-            var menu = await MenuService.GetMenus();
+            var menu = await Service.Get();
 
             Menu = menu.SingleOrDefault(p => p.Name == MenuEnum.MainMenu.ToString());
         }

@@ -19,31 +19,31 @@ namespace MySite.Client.Service
 
         public HttpClient HttpClient { get; }
 
-        public async Task<Menu[]> GetMenus()
+        public async Task<Menu[]> Get()
         {
             var result = await HttpClient.GetJsonAsync<Menu[]>(_menuBaseUrl);
             Console.WriteLine(result.ToString());
             return result;
         }
 
-        public async Task<Menu> GetMenu(long menuId)
+        public async Task<Menu> Get(long menuId)
         {
             return await HttpClient.GetJsonAsync<Menu>($"{_menuBaseUrl}/{menuId}");
         }
 
-        public async Task<List<Menu>> GetMenusByName(string menuName)
+        public async Task<List<Menu>> GetByName(string menuName)
         {
             return await HttpClient.GetJsonAsync<List<Menu>>($"{_menuBaseUrl}?name={menuName}");
         }
 
-        public async Task<ResponseModel> AddMenu(Menu menu)
+        public async Task<ResponseModel> Add(Menu menu)
         {
             var response = await HttpClient.PostJsonAsync<ResponseModel>(_menuBaseUrl, menu);
 
             return response;
         }
 
-        public async Task<ResponseModel> EditMenu(long menuId, Menu menu)
+        public async Task<ResponseModel> Update(long menuId, Menu menu)
         {
             var response =
                 await HttpClient.PutJsonAsync<ResponseModel>(_menuBaseUrl, new {MenuId = menuId, Menu = menu});
@@ -51,11 +51,11 @@ namespace MySite.Client.Service
             return response;
         }
 
-        public async Task<ResponseModel> RemoveMenu(Menu menu)
+        public async Task<ResponseModel> Remove(Menu menu)
         {
             var response = await HttpClient.SendJsonAsync<ResponseModel>(HttpMethod.Delete, _menuBaseUrl, menu);
 
             return response;
         }
     }
-}
+    }
