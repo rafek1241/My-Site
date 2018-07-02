@@ -8,12 +8,15 @@
 <div class="homepage-container container-fluid">
     <div class="row justify-content-end pt-5">
         <div class="col d-flex justify-content-end">
-            <blockquote class="blockquote p-5 text-right">
-                <p class="motto mb-0 px-2 pt-2">His his honeyed had amiss they start amiss...</p>
-                <footer class="blockquote-footer px-2 pb-2">
-                    <cite title="Jack sparrow veni vidi vici">Jack sparrow</cite>
-                </footer>
-            </blockquote>
+            @if (Motto != null)
+            {
+                <blockquote class="blockquote p-5 text-right">
+                    <p class="motto mb-0 px-2 pt-2">@Motto.Sentence</p>
+                    <footer class="blockquote-footer px-2 pb-2">
+                        <cite title="Jack sparrow veni vidi vici">@Motto.Author</cite>
+                    </footer>
+                </blockquote>
+            }
         </div>
     </div>
 </div>
