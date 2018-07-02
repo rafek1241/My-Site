@@ -48,6 +48,7 @@ namespace MySite.Server
             });
 
             services.AddScoped<IMenuRepository, MenuRepository>();
+            services.AddScoped<IMottoRepository, MottoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
