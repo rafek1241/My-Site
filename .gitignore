@@ -11,3 +11,4 @@
 /MySite.Shared/obj
 *.user
 /MySite.Client/node_modules
+/MySite.Client/npm-debug.log

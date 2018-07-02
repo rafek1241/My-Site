@@ -7,9 +7,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MySite.Server.Models;
 using MySite.Server.Repositories;
-using Newtonsoft.Json.Serialization;
 
 namespace MySite.Server
 {
