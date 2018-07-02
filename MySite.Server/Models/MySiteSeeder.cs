@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Bogus;
+using Microsoft.EntityFrameworkCore;
 using MySite.Shared.Models;
 using MySite.Shared.Models.Enums;
 
@@ -81,6 +82,21 @@ namespace MySite.Server.Models
                     MenuNavLinkId = 4,
                 }
                 );
+
+            var mottoFaker = new Faker<Motto>();
+
+            long mottoId = 1;
+
+            mottoFaker.RuleFor(p => p.MottoId, w => mottoId++);
+            mottoFaker.RuleFor(p => p.Active, w => w.Random.Bool());
+            mottoFaker.RuleFor(p => p.Author, w => w.Person.FullName);
+            mottoFaker.RuleFor(p => p.Sentence, w => w.Lorem.Sentence(10, 6));
+
+            var mottoes = mottoFaker.Generate(10);
+
+            builder.Entity<Motto>().HasData(
+                mottoes.ToArray()
+            );
 
         }
     }

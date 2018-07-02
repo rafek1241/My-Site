@@ -12,6 +12,7 @@ namespace MySite.Server
         public DbSet<Menu> Menus { get; set; }
         public DbSet<NavLink> NavLinks { get; set; }
         public DbSet<MenuNavLink> MenuNavLinks { get; set; }
+        public DbSet<Motto> Mottoes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MySite.Server;
 
 namespace MySite.Server.Migrations
 {
     [DbContext(typeof(MySiteContext))]
-    partial class MySiteContextModelSnapshot : ModelSnapshot
+    [Migration("20180702162819_version_02_07")]
+    partial class version_02_07
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
