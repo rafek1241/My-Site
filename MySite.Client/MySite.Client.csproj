@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Watch Remove="Component\Homepage.cshtml" />
     <Watch Remove="Style\homepage.scss" />
   </ItemGroup>
 
