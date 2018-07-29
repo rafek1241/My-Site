@@ -17,31 +17,31 @@ namespace MySite.Client.Service
 
         public string ResourceBaseUrl { get; set; }
 
-        public async Task<T[]> Get()
+        public virtual async Task<T[]> Get()
         {
             var result = await HttpClient.GetJsonAsync<T[]>(ResourceBaseUrl);
             Console.WriteLine(result.ToString());
             return result;
         }
 
-        public async Task<T> Get(long itemId)
+        public virtual async Task<T> Get(long itemId)
         {
             return await HttpClient.GetJsonAsync<T>($"{ResourceBaseUrl}/{itemId}");
         }
 
-        public async Task<ResponseModel> Add(T item)
+        public virtual async Task<ResponseModel> Add(T item)
         {
             var response = await HttpClient.PostJsonAsync<ResponseModel>(ResourceBaseUrl, item);
 
             return response;
         }
 
-        public async Task<ResponseModel> Update(long itemId, T item)
+        public virtual async Task<ResponseModel> Update(long itemId, T item)
         {
-          throw new NotImplementedException();
+            return await HttpClient.PutJsonAsync<ResponseModel>($"{ResourceBaseUrl}/{itemId}", item);
         }
 
-        public async Task<ResponseModel> Remove(T item)
+        public virtual async Task<ResponseModel> Remove(T item)
         {
             var response = await HttpClient.SendJsonAsync<ResponseModel>(HttpMethod.Delete, ResourceBaseUrl, item);
 
