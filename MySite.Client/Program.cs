@@ -14,6 +14,7 @@ namespace MySite.Client
                 // Add any custom services here
                 services.AddSingleton<IMenuService, MenuService>();
                 services.AddSingleton<IMottoService, MottoService>();
+                services.AddSingleton<IPersonalInformationService, PersonalInformationService>();
             });
 
             new BrowserRenderer(serviceProvider).AddComponent<App>("app");
