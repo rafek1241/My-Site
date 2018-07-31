@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using MySite.Client.Service.About.Interfaces;
 using MySite.Shared.Models;
 using MySite.Shared.Models.Utils;
 
-namespace MySite.Client.Service
+namespace MySite.Client.Service.About.Implementation
 {
     public class PersonalInformationService : BaseCrudService<PersonalInformation>, IPersonalInformationService
     {

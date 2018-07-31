@@ -20,6 +20,5 @@ namespace MySite.Shared.Models.About
 
         public byte[] Photo { get; set; }
 
-        public virtual PersonalInformation PersonalInformation { get; set; }
     }
 }
