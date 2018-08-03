@@ -21,7 +21,7 @@ namespace MySite.Server.Controllers
             return await _mottoRepository.GetAsync();
         }
 
-        [HttpGet("/{id}")]
+        [HttpGet("{id}")]
         public async Task<Motto> GetAsync(long id)
         {
             return await _mottoRepository.GetAsync(id);
