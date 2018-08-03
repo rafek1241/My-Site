@@ -68,11 +68,11 @@ namespace MySite.Server
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "api/{controller}/{*all}");
+                    "apiDefault",
+                    "api/{*url}",
+                    new { controller = "Home", action = "ApiNotFound" });
             });
 
-            app.UseBlazor<Client.Program>();
         }
     }
 }
