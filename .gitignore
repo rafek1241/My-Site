@@ -3,6 +3,7 @@
 ################################################################################
 
 /.vs
+/.vscode
 /MySite.Client/bin
 /MySite.Client/obj
 /MySite.Server/bin

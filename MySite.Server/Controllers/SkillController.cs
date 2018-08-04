@@ -15,8 +15,8 @@ namespace MySite.Server.Controllers
         [HttpGet]
         public async Task<Skill[]> Get()
         {
-            Debug.WriteLine("Dump!");
-            return new[]
+            //TODO: Swap Task.Run() to fetch data from database
+            return await Task.Run(() => new[]
             {
                 new Skill()
                 {
@@ -28,7 +28,7 @@ namespace MySite.Server.Controllers
                 {
                     Name = "Test3"
                 }
-            };
+            });
         }
     }
 }
