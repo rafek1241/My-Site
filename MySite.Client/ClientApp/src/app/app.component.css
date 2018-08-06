@@ -4,3 +4,24 @@
     padding-top: 50px;
   }
 }
+
+.col {
+  padding: 0;
+}
+
+:host() {
+  height: 100%;
+  width: 100%;
+}
+
+:host() > div {
+  height: 100%;
+}
+
+.nav-menu {
+  max-height: 50px;
+}
+
+.body-content {
+  height: calc(100% - 50px);
+}

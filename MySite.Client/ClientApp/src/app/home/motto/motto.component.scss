@@ -1,0 +1,42 @@
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+.homepage-container {
+  height: 100%;
+  position: relative;
+
+  blockquote {
+    margin-right: 5vw;
+    position: relative;
+    z-index: 10;
+
+    &:before,
+    &:after {
+      @include fa-icon;
+      @extend .fas;
+      z-index: 5;
+      content: fa-content($fa-var-quote-right);
+      position: absolute;
+      opacity: 0.4;
+      @extend .fa-3x !optional;
+    }
+
+    &:before {
+      left: 0;
+      top: 0;
+    }
+
+    &:after {
+      right: 0;
+      bottom: 0;
+    }
+
+    p,
+    footer {
+      z-index: 1000;
+      position: relative;
+    }
+  }
+}

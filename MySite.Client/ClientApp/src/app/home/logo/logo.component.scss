@@ -1,0 +1,23 @@
+$logo_line_height: 0.77;
+
+.logo {
+  font-family: "Open Sans";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  //pointer-events: none;
+  font-size: 100vh;
+  line-height: $logo_line_height;
+  overflow: hidden;
+  padding-right: 15vh;
+  padding-left: 0;
+  margin-left: -10vh;
+
+  .logo-extented {
+    line-height: $logo_line_height;
+    font-size: 22vh;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
