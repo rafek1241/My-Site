@@ -1,0 +1,19 @@
+.image-column {
+  width: 25%;
+}
+.descr-column {
+  width: 75%;
+}
+.education-tile {
+  padding: 0;
+  & + & {
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+:host {
+  margin: 10px 0;
+  display: block;
+}
