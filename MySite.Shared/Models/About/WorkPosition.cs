@@ -9,5 +9,7 @@ namespace MySite.Shared.Models.About
     public class WorkPosition
     {
         public long WorkPositionId { get; set; }
+        
+        public string Name { get; set; }
     }
 }

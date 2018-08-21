@@ -3,18 +3,16 @@
 </p> -->
 <h3>Education: </h3>
 <hr/>
-  <div class="row mx-3 mt-3">
-    <div class="col">
-      <div class="row education-tile" *ngFor="let item of [1,2,3]">
-        <div class="col-2 pl-0">
-          <img class="img-fluid" src='http://loremflickr.com/150/150/city'
-            alt='' />
-        </div>
-        <div class="col pr-0">
-          <h4 class="m-0">Lorem ipsum dolor sit.</h4>
-          <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus amet incidunt at.</small>
-        </div>
+<div class="row mx-3 mt-3">
+  <div class="col">
+    <div class="row education-tile" *ngFor="let item of educationList | async">
+      <div class="col-2 pl-0">
+        <img class="img-fluid" src='http://loremflickr.com/150/150/city' alt='' />
+      </div>
+      <div class="col pr-0">
+        <h4 class="m-0">{{ item.place }}</h4>
+        <small>{{ item.degree.name }}</small>
       </div>
     </div>
   </div>
+</div>

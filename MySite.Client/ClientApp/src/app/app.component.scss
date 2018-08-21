@@ -1,2 +1,28 @@
-footer{
+$h-and-f-height: 72px;
+$header-height: $h-and-f-height;
+$footer-height: $h-and-f-height;
+
+.app-container {
+  min-height: 100%;
+  position: relative;
+}
+
+.app-content {
+  padding-top: $header-height;
+  padding-bottom: $footer-height;
+}
+
+.app-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $header-height;
+  z-index: 1000;
+}
+
+.app-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $footer-height; /* Height of the footer */
 }

@@ -1,29 +1,20 @@
-<form class="contact-form" #contactForm="ngForm">
-  <!-- <p class="">
-    <strong>
-      {{diagnostic}}
-    </strong>
-  </p> -->
-  <div class="form-group">
-    <label for="mail">Email</label>
-    <input type="email" [(ngModel)]="email" name="email" id="mail"
-      class="form-control"
-      placeholder="Type your email" aria-describedby="mailHelpId">
-    <small id="mailHelpId" class="text-muted">Type email if you want to get
-      response</small>
-  </div>
-  <div class="form-group">
-    <label for="message">Message</label>
-    <textarea class="form-control" [(ngModel)]="message" name="message"
-      id="message"
-      rows="3"
-      placeholder="Type message that you want to send me"></textarea>
-  </div>
-  <button type="submit" (click)="submit(contactForm)" class="btn btn-primary">
-    <fa-icon [icon]="faEnvelope"></fa-icon> Send mail
-  </button>
-  <button type="button" class="btn btn-default ml-2"
-    (click)="contactForm.resetForm()">
-    <fa-icon [icon]="faRedo"></fa-icon> Reset
-  </button>
-</form>
+<div class="container">
+  <form class="contact-form" #contactForm="ngForm">
+    <div class="form-group">
+      <label for="mail">Email</label>
+      <input type="email" [(ngModel)]="email" name="email" id="mail" class="form-control" placeholder="Type your email" aria-describedby="mailHelpId">
+      <small id="mailHelpId" class="text-muted">Type email if you want to get response
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea class="form-control" [(ngModel)]="message" name="message" id="message" rows="3" placeholder="Type message that you want to send me"></textarea>
+    </div>
+    <button type="submit" (click)="submit(contactForm)" class="btn btn-primary">
+      <fa-icon [icon]="faEnvelope"></fa-icon> Send mail
+    </button>
+    <button type="button" class="btn btn-default ml-2" (click)="contactForm.resetForm()">
+      <fa-icon [icon]="faRedo"></fa-icon> Reset
+    </button>
+  </form>
+</div>

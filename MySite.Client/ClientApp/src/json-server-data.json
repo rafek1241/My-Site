@@ -1,0 +1,39 @@
+{
+  "education": [
+    {
+      "id": 1,
+      "place": "Oyonder",
+      "educationBegin": "07/29/2015",
+      "educationEnd": "6/15/2017",
+      "educationDegreeId": 1
+    },
+    {
+      "id": 2,
+      "place": "Quinu",
+      "educationBegin": "12/03/2006",
+      "educationEnd": "12/28/2013",
+      "educationDegreeId": 2
+    },
+    {
+      "id": 3,
+      "place": "Yakitri",
+      "educationBegin": "02/03/2002",
+      "educationEnd": "8/17/2015",
+      "educationDegreeId": 3
+    }
+  ],
+  "educationDegree": [
+    {
+      "id": 1,
+      "name": "Bachelor's"
+    },
+    {
+      "id": 2,
+      "name": "Master's"
+    },
+    {
+      "id": 3,
+      "name": "Doctoral"
+    }
+  ]
+}

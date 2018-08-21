@@ -1,13 +1,13 @@
-import { ApiModule } from './api.module';
+import { ApiModule } from "./api.module";
 
-describe('ApiModule', () => {
+describe("ApiModule", () => {
   let apiModule: ApiModule;
 
   beforeEach(() => {
     apiModule = new ApiModule();
   });
 
-  it('should create an instance', () => {
+  it("should create an instance", () => {
     expect(apiModule).toBeTruthy();
   });
 });

@@ -1,29 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { faEnvelope, faRedo } from '@fortawesome/free-solid-svg-icons';
+import { Component, OnInit } from "@angular/core";
+import { faEnvelope, faRedo } from "@fortawesome/free-solid-svg-icons";
+import { NgForm } from "../../../../node_modules/@angular/forms";
 
 @Component({
-  selector: 'app-contact-form',
-  templateUrl: './contact-form.component.html',
-  styleUrls: ['./contact-form.component.scss']
+  selector: "app-contact-form",
+  templateUrl: "./contact-form.component.html",
+  styleUrls: ["./contact-form.component.scss"]
 })
 export class ContactFormComponent {
   faEnvelope = faEnvelope;
   faRedo = faRedo;
-  form: MailForm;
+  model: MailForm;
 
-  constructor() {
-    this.form = {
-      email: '',
-      message: ''
-    };
-  }
+  constructor() {}
 
   submit(form: NgForm) {
     console.log(form, form.value);
-  }
-
-  get diagnostic() {
-    return JSON.stringify(this.form);
+    const mailForm: MailForm = form.value as MailForm;
+    console.log(mailForm);
   }
 }
 

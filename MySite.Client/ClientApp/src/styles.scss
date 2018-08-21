@@ -4,3 +4,11 @@
 // @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 // @import "~@fortawesome/fontawesome-free/scss/regular";
 // @import "~@fortawesome/fontawesome-free/scss/brands";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
