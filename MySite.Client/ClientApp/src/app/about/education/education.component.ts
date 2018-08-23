@@ -1,7 +1,7 @@
 import { Education } from "./../../models/education";
 import { EducationService } from "./../../api/education.service";
-import { Component, OnInit } from "@angular/core";
-import { BehaviorSubject, Observable } from "rxjs";
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Observable, BehaviorSubject } from "rxjs";
 
 @Component({
   selector: "app-education",
@@ -9,7 +9,7 @@ import { BehaviorSubject, Observable } from "rxjs";
   styleUrls: ["./education.component.scss"]
 })
 export class EducationComponent implements OnInit {
-  educationList: Observable<Education[]>;
+  educationList: BehaviorSubject<Education[]>;
 
   constructor(private educationService: EducationService) {}
 

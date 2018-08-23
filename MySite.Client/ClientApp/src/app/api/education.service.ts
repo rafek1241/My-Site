@@ -1,59 +1,40 @@
 import { EducationDegree } from "./../models/education-degree";
 import { Injectable, Inject, InjectionToken, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import {
-  BehaviorSubject,
-  Observable,
-  forkJoin,
-  merge,
-  combineLatest
-} from "rxjs";
+import { BehaviorSubject, Observable, forkJoin } from "rxjs";
 import { switchMap, map, zip, tap } from "rxjs/operators";
 import { Education } from "../models/education";
 
 export const APP_CONFIG = new InjectionToken<Config>("APP_CONFIG");
 
 export class EducationService {
-  educationListObservable: Observable<any>;
-  educationDegreeListObservable: Observable<EducationDegree[]>;
-  educationList$ = new BehaviorSubject<Education[]>([]);
+  private educationList$ = new BehaviorSubject<Education[]>([]);
   config: Config;
 
   constructor(private http: HttpClient, @Inject(APP_CONFIG) config: Config) {
     this.config = config;
-    console.log(this);
 
-    this.educationListObservable = forkJoin(
+    forkJoin(
       this.http.get<Education[]>(config.api + "education"),
       this.http.get<EducationDegree[]>(config.api + "educationDegree")
-    ).pipe(
-      map(val => {
-        const eduDegree = val[1];
-        const edu = val[0];
+    )
+      .pipe(
+        map(val => {
+          const eduDegree = val[1];
+          const edu = val[0];
 
-        edu.forEach(
-          v => (v.degree = eduDegree.find(d => d.id === v.educationDegreeId))
-        );
+          edu.forEach(
+            v => (v.degree = eduDegree.find(d => d.id === v.educationDegreeId))
+          );
 
-        return edu;
-      })
-    );
-
-    // this.educationListObservable.pipe(
-    //   tap(p => console.log(p)),
-    //   map((value, idx) => {
-    //     this.educationDegreeListObservable.subscribe(result => {
-    //       value.forEach(edu => {
-    //         edu.degree = result.find(p => p.id === edu.educationDegreeId);
-    //       });
-    //     });
-    //   }),
-    //   tap(p => console.log(p))
-    // );
+          return edu;
+        })
+      )
+      .subscribe(v => this.educationList$.next(v));
   }
 
-  getEducationList(): Observable<Education[]> {
-    return this.educationListObservable;
+  getEducationList(): BehaviorSubject<Education[]> {
+    return this.educationList$;
   }
 }
 
