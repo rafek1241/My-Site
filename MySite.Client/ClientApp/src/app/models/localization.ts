@@ -1,5 +1,5 @@
 export interface Localization {
-  workLocalizationId: number;
+  id: number;
   lattitude: number;
   longitude: number;
   accuracy: number;

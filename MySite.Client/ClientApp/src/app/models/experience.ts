@@ -3,10 +3,13 @@ import { Company } from "./company";
 import { WorkPosition } from "./work-position";
 
 export interface Experience {
-  experienceId: number;
+  id: number;
+  positionId: number;
   position: WorkPosition;
+  companyId: number;
   company: Company;
   workBegin: Date;
   workEnd?: Date;
+  localizationId: number;
   localization: Localization;
 }

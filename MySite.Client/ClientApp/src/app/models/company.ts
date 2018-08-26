@@ -1,5 +1,5 @@
 export interface Company {
-  companyId: number;
+  id: number;
   name: string;
   information: string;
   photo: Uint8Array;

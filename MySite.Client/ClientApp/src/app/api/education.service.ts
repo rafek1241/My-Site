@@ -4,6 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable, forkJoin } from "rxjs";
 import { switchMap, map, zip, tap } from "rxjs/operators";
 import { Education } from "../models/education";
+import { Config } from "../models/Config";
 
 export const APP_CONFIG = new InjectionToken<Config>("APP_CONFIG");
 
@@ -16,7 +17,7 @@ export class EducationService {
 
     forkJoin(
       this.http.get<Education[]>(config.api + "education"),
-      this.http.get<EducationDegree[]>(config.api + "educationDegree")
+      this.http.get<EducationDegree[]>(config.api + "education-degree")
     )
       .pipe(
         map(val => {
@@ -36,8 +37,4 @@ export class EducationService {
   getEducationList(): BehaviorSubject<Education[]> {
     return this.educationList$;
   }
-}
-
-export interface Config {
-  api: string;
 }

@@ -1,4 +1,4 @@
 export interface WorkPosition {
-  workPositionId: number;
+  id: number;
   name: string;
 }

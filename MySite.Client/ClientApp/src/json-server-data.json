@@ -1,4 +1,84 @@
 {
+  "company": [
+    {
+      "id": 1,
+      "name": "Softvig",
+      "information": "Lomer ipsum",
+      "photo": []
+    },
+    {
+      "id": 2,
+      "name": "Softvig",
+      "information": "Lomer ipsum",
+      "photo": []
+    },
+    {
+      "id": 3,
+      "name": "Softvig",
+      "information": "Lomer ipsum",
+      "photo": []
+    }
+  ],
+  "work-position": [
+    {
+      "id": 1,
+      "name": "Junior .NET Developer"
+    },
+    {
+      "id": 2,
+      "name": "Middle Full-stack Developer"
+    },
+    {
+      "id": 3,
+      "name": "Senior Full-stack Developer"
+    }
+  ],
+  "localization": [
+    {
+      "id": 1,
+      "lattitude": 43.221,
+      "longitude": 45.998,
+      "accuracy": 2.1
+    },
+    {
+      "id": 2,
+      "lattitude": 43.221,
+      "longitude": 45.998,
+      "accuracy": 2.1
+    },
+    {
+      "id": 3,
+      "lattitude": 43.221,
+      "longitude": 45.998,
+      "accuracy": 2.1
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "positionId": 1,
+      "companyId": 1,
+      "workBegin": "02/07/2008",
+      "workEnd": "03/08/2009",
+      "localizationId": 1
+    },
+    {
+      "id": 2,
+      "positionId": 2,
+      "companyId": 2,
+      "workBegin": "02/07/2008",
+      "workEnd": "03/08/2009",
+      "localizationId": 2
+    },
+    {
+      "id": 3,
+      "positionId": 3,
+      "companyId": 3,
+      "workBegin": "02/07/2008",
+      "workEnd": "03/08/2009",
+      "localizationId": 3
+    }
+  ],
   "education": [
     {
       "id": 1,
@@ -22,7 +102,7 @@
       "educationDegreeId": 3
     }
   ],
-  "educationDegree": [
+  "education-degree": [
     {
       "id": 1,
       "name": "Bachelor's"
