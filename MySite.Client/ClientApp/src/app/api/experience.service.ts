@@ -19,7 +19,7 @@ export class ExperienceService {
     private http: HttpClient,
     private companyService: CompanyService,
     private localizationService: LocalizationService,
-    private workPositionService: WorkPositionService
+    private workPositionService: WorkPositionService,
     @Inject(APP_CONFIG) config: Config
   ) {
     this._experienceList$ = forkJoin(
