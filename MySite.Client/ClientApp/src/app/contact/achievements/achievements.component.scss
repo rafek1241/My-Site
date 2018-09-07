@@ -1,0 +1,27 @@
+$card-icon-size: 30;
+
+.card-columns {
+  column-count: 5;
+  .card {
+    margin-top: $card-icon-size * 1px;
+    font-family: "Roboto";
+    font-weight: 300;
+    .card-icon-top {
+      display: flex;
+      justify-content: center;
+      margin-top: $card-icon-size * -1px;
+
+      .icon-overlay {
+        font-size: $card-icon-size * 1px;
+        line-height: $card-icon-size * 1px - 1px;
+        width: $card-icon-size * 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: $card-icon-size * 2px;
+        background-color: wheat;
+        border-radius: 50%;
+      }
+    }
+  }
+}
