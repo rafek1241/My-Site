@@ -1,11 +1,14 @@
 import { Team } from "./team";
+import { Company } from "./company";
 
 export interface Award {
-  awardId: string;
+  id: number;
   title: string;
   description: string;
-  company: string;
+  companyId: number;
+  company: Company;
   awardDate: Date;
-  photo: Uint8Array;
+  photoBase64: string;
   team: Team;
+  teamId: number;
 }

@@ -1,6 +1,6 @@
 import { Observable } from "rxjs";
 import { WorkPosition } from "./../models/work-position";
-import { Config } from "./../models/Config";
+import { Config } from "./../models/config";
 import { APP_CONFIG } from "./education.service";
 import { HttpClient } from "@angular/common/http";
 import { Injectable, Inject } from "@angular/core";

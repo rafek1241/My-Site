@@ -1,3 +1,7 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
 $h-and-f-height: 72px;
 $header-height: $h-and-f-height;
 $footer-height: $h-and-f-height;
@@ -20,9 +24,16 @@ $footer-height: $h-and-f-height;
   z-index: 1000;
 }
 
+@include media-breakpoint-up(sm) {
+  .app-footer {
+    height: $footer-height;
+  }
+}
+
 .app-footer {
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
-  height: $footer-height; /* Height of the footer */
+  /* Height of the footer */
 }

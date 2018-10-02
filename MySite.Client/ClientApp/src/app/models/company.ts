@@ -1,6 +1,9 @@
+import { Award } from "./award";
+
 export interface Company {
   id: number;
   name: string;
   information: string;
-  photo: Uint8Array;
+  photoBase64: string;
+  awards?: Award[];
 }

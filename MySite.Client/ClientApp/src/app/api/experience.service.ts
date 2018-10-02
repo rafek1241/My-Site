@@ -1,16 +1,17 @@
-import { WorkPositionService } from './work-position.service';
+import { WorkPositionService } from "./work-position.service";
 import { LocalizationService } from "./localization.service";
 import { CompanyService } from "./company.service";
 import { APP_CONFIG } from "./education.service";
 import { HttpClient } from "@angular/common/http";
 import { Injectable, Inject } from "@angular/core";
-import { Config } from "../models/Config";
+import { Config } from "../models/config";
 import { Observable, forkJoin } from "rxjs";
 import { Experience } from "../models/experience";
 import { map } from "rxjs/operators";
+import { ApiModule } from "./api.module";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: ApiModule
 })
 export class ExperienceService {
   private _experienceList$: Observable<Experience[]>;
@@ -33,10 +34,10 @@ export class ExperienceService {
       const workPositions = p[3];
       const experience = p[0];
 
-      experience.forEach(d => {
-       d.company = companies.find(w => w.id === d.companyId);
-       d.localization = localization.find(w => w.id === d.localizationId);
-       d.position = workPositions.find(w => w.id === d.positionId);
+      experience.forEach(exp => {
+       exp.company = companies.find(company => company.id === exp.companyId);
+       exp.localization = localization.find(local => local.id === exp.localizationId);
+       exp.position = workPositions.find(position => position.id === exp.positionId);
       });
 
       return experience;

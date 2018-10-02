@@ -1,10 +1,10 @@
 import { EducationDegree } from "./../models/education-degree";
-import { Injectable, Inject, InjectionToken, OnInit } from "@angular/core";
+import { Inject, InjectionToken } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { BehaviorSubject, Observable, forkJoin } from "rxjs";
-import { switchMap, map, zip, tap } from "rxjs/operators";
+import { BehaviorSubject, forkJoin } from "rxjs";
+import { map } from "rxjs/operators";
 import { Education } from "../models/education";
-import { Config } from "../models/Config";
+import { Config } from "../models/config";
 
 export const APP_CONFIG = new InjectionToken<Config>("APP_CONFIG");
 

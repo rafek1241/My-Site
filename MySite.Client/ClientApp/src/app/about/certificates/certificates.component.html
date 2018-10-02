@@ -1,3 +1,20 @@
-<p>
-  certificates works!
-</p>
+<div class="card" *ngFor="let item of certificates$| async" placement="bottom" [ngbTooltip]="item.description">
+  <div class="card-icon-top">
+    <div class="icon-overlay">
+      <fa-icon [icon]="['fas', 'award']" transform="shrink-10 right-3 down-4" [fixedWidth]="false" [mask]="['fas','file']"></fa-icon>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="card-title">
+      <p>
+        {{item.title}}
+      </p>
+    </div>
+    <!-- <p class="card-text">{{item.lumber}}</p> -->
+    <!-- <p class="card-text">
+      <small class="text-muted">
+        Granted at {{item.certificateBegin}} by <cite>{{item.institution.name}}</cite>
+      </small>
+    </p> -->
+  </div>
+</div>

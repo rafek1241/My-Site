@@ -1,0 +1,62 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
+$footer-height:72px;
+
+.logo-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-bottom: $footer-height;
+  font-family: 'Segoe UI',
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+  margin: 0;
+  user-select: none;
+
+  .big {
+    font-size: 60vh;
+    height: 60vh;
+    line-height: 65vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  .small {
+    font-size: 30vh;
+    height: 30vh;
+    line-height: 30vh;
+    -webkit-text-stroke: 1vh white;
+    margin: 0;
+    padding: 0;
+    margin-left: -9vh;
+  }
+}
+
+
+@include media-breakpoint-down(sm) {
+  .logo-container {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 0;
+
+    .big {
+      font-size: 60vw;
+      height: 6vw;
+      line-height: 65vw;
+    }
+
+    .small {
+      font-size: 30vw;
+      height: 30vw;
+      line-height: 30vw;
+      -webkit-text-stroke: 0.5vw white;
+
+      margin-left: -9vw;
+    }
+  }
+}

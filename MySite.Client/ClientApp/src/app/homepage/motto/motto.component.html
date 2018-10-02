@@ -1,3 +1,9 @@
-<p>
-  motto works!
-</p>
+<div class="row">
+  <div class="col-lg-9 col-md-6 col-sm-12"></div>
+  <div class="col-lg-3 col-md-6 col-sm-12">
+    <div class="motto-container" *ngIf="currentMotto">
+      <p class="slug mb-0 pb-0">{{currentMotto.sentence}}</p>
+      <p class="author mt-0 pt-0">- <cite>{{currentMotto.author}}</cite></p>
+    </div>
+  </div>
+</div>

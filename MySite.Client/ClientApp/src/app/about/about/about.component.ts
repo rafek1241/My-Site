@@ -1,4 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-about",
@@ -6,7 +9,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./about.component.scss"]
 })
 export class AboutComponent implements OnInit {
-  constructor() {}
+  constructor() {
+    library.add(fab);
+    library.add(fas);
+  }
 
   ngOnInit() {}
 }

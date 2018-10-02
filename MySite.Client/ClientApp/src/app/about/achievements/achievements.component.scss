@@ -1,0 +1,98 @@
+.card-columns {
+  column-count: 6;
+}
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+/*
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
+@mixin GradientTopToBottom($upper, $lower) {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,7db9e8+100 */
+  background: $primary;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, $upper 0%, $lower 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, $upper 0%, $lower 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, $upper 0%, $lower 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=''+ $upper, endColorstr=''+ $lower, GradientType=0);
+  /* IE6-9 */
+}
+
+$card-top-round-size: 40;
+
+.card {
+  margin-top: $card-top-round-size * 1px;
+  border: 0;
+
+  .card-icon-top,
+  .card-img-top {
+    display: flex;
+    justify-content: center;
+    margin-top: $card-top-round-size * -1px;
+    z-index: 10;
+    position: relative;
+
+    .icon-overlay,
+    .img-overlay {
+      font-size: $card-top-round-size * 0.8px;
+      line-height: $card-top-round-size * 1px - 1px;
+      width: $card-top-round-size * 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: $card-top-round-size * 2px;
+      border-radius: 50%;
+      color: $white;
+      //gradient bg of icon:
+      @include GradientTopToBottom(lighten($primary, 10%), $primary);
+
+      img {
+        height: $card-top-round-size*0.8px;
+        width: auto;
+        max-width: $card-top-round-size*0.8px;
+      }
+
+      .fa-inverse {
+        color: $primary;
+      }
+    }
+
+    .icon-overlay {
+      position: relative;
+    }
+  }
+
+  .card-body {
+    z-index: 100;
+    margin-top: -18px;
+    position: relative;
+    padding: 0;
+
+    .card-title {
+      display: flex;
+      justify-content: center;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      font-size: 0.8em;
+      position: relative;
+
+      p,
+      p.front {
+        margin: 0;
+        padding: 0px 9px;
+        border-radius: 10px;
+        color: $white;
+        word-break: normal;
+        text-align: center;
+        //gradient bg of icon:
+        // @include GradientTopToBottom(lighten($primary, 10%), $primary);
+        background: $dark;
+      }
+    }
+  }
+}

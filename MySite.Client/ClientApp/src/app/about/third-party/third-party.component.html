@@ -1,3 +1,9 @@
-<p>
-  third-party works!
-</p>
+<div class="container-fluid">
+  <div class="row" *ngFor="let item of thirdPartyAppList$ | async">
+    <div class="col d-flex justify-content-center">
+      <a [href]="item.link" target="_blank">
+        <fa-icon [icon]="['fab', item.icon]" [styles]="convertToDictionaryObject(item.appAdditionalInformations)"></fa-icon>
+      </a>
+    </div>
+  </div>
+</div>

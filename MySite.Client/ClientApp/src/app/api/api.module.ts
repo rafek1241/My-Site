@@ -22,7 +22,6 @@ import { WorkPositionService } from "./work-position.service";
     CompanyService,
     LocalizationService,
     WorkPositionService,
-    ExperienceService
   ]
 })
 export class ApiModule {}

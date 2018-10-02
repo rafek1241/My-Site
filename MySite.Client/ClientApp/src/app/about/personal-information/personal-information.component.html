@@ -1,0 +1,16 @@
+<div class="row" *ngIf="currentPersonalInformation">
+  <div class="pl-3">
+    <img class="img-thumbnail rounded img-responsive" [src]="currentPersonalInformation.person.photoBase64">
+  </div>
+  <div>
+    <app-third-party></app-third-party>
+  </div>
+  <div class="col">
+    <h2>
+      {{currentPersonalInformation.person.name}} {{currentPersonalInformation.person.surname}}
+    </h2>
+    <p class="lead">
+      {{currentPersonalInformation.description}}
+    </p>
+  </div>
+</div>

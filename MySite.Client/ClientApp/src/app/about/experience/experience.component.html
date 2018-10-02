@@ -1,14 +1,25 @@
-<h3>Experience: </h3>
-<hr/>
+<h3>Experience</h3>
+<hr />
 <div class="row mx-3 mt-3">
   <div class="col">
     <div class="row education-tile" *ngFor="let item of experienceList$ | async">
-      <div class="col-2 pl-0">
+      <div class="col-lg-2 col-md-3 col-4 pl-0">
         <img class="img-fluid" src='http://loremflickr.com/150/150/city' alt='' />
       </div>
       <div class="col pr-0">
-        <h4 class="m-0">{{item.company.name}} - {{item.position.name}}</h4>
-        <small>{{item.company.information}}</small>
+        <h3 class="m-0 position-name">{{item.position.name}}</h3>
+        <h5 class="experience-work-time">
+          <fa-icon class="date-icon" [icon]="['fas', 'clock']"></fa-icon>
+          <span>{{item.workBegin}} - {{item.workEnd}}</span>
+        </h5>
+        <h5 class="experience-conpany" *ngIf="item.company">
+          <fa-icon class="company-icon" [icon]="['fas', 'user-tie']"></fa-icon>
+          <span>{{item.company.name}}</span>
+        </h5>
+        <h5 class="localization-conpany" *ngIf="item.localization && item.localization.additionalInformation">
+          <fa-icon class="localization-icon" [icon]="['fas', 'map-marker']"></fa-icon>
+          <span>{{item.localization.additionalInformation.city}}, {{item.localization.additionalInformation.country}}</span>
+        </h5>
       </div>
     </div>
   </div>

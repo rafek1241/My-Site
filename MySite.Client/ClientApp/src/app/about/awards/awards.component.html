@@ -1,17 +1,18 @@
-<h3>Awards: </h3>
-<hr/>
-  <div class="card-columns">
-    <div class="card" *ngFor="let item of [1,2,3,4,5,6]">
-      <img class="card-img-top" src="http://loremflickr.com/160/100/institution"
-        alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card has supporting text below as a natural
-          lead-in to additional content.</p>
-        <p class="card-text" *ngIf="item % 3== 1">This card has
-          supporting text below as a natural
-          lead-in to additional content.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
+<div class="card" *ngFor="let item of $awardList | async" placement="bottom" [ngbTooltip]="item.description">
+  <div class="card-icon-top">
+    <fa-icon class="icon-overlay" [icon]="['fas', 'award']"></fa-icon>
   </div>
+  <div class="card-body">
+    <div class="card-title">
+      <p>
+        {{item.title}}
+      </p>
+    </div>
+    <!-- <p class="card-text">{{item.description}}</p> -->
+    <!-- <p class="card-text">
+      <small class="text-muted">
+        Granted at {{item.awardDate}} by <cite>{{item.company.name}}</cite>
+      </small>
+    </p> -->
+  </div>
+</div>

@@ -1,3 +1,10 @@
-<p>
-  courses works!
-</p>
+<div class="card" *ngFor="let item of courses$ | async" placement="bottom" [ngbTooltip]="item.description">
+  <div class="card-icon-top">
+    <fa-icon class="icon-overlay" [icon]="['fas', 'pen']" ></fa-icon>
+  </div>
+  <div class="card-body">
+    <div class="card-title">
+      <p>{{item.name}}</p>
+    </div>
+  </div>
+</div>

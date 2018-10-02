@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  api: "http://localhost:3000/"
+  api: "http://localhost:3000/",
+  localizationApi:
+    "https://nominatim.openstreetmap.org/reverse?format=json&zoom=18&addressdetails=1"
+    // Example: https://nominatim.openstreetmap.org/reverse?format=json&zoom=18&addressdetails=1&lat=53.45009&lon=14.53634
 };
 
 /*

@@ -7,6 +7,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { AppComponent } from "./app.component";
 import { AboutModule } from "./about/about.module";
@@ -14,7 +15,11 @@ import { ContactModule } from "./contact/contact.module";
 import { ApiModule } from "./api/api.module";
 
 const routes: Routes = [
-  { path: "", redirectTo: "/home", pathMatch: "full" },
+  {
+    path: "",
+    redirectTo: "/home",
+    pathMatch: "full"
+  },
   { path: "home", component: HomeComponent },
   { path: "about", component: AboutComponent },
   { path: "contact", component: ContactComponent },
@@ -23,6 +28,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    NgbModule,
     ApiModule,
     BrowserModule,
     HomepageModule,

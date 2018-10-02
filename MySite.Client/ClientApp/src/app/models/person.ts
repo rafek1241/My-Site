@@ -1,8 +1,8 @@
 export interface Person {
-  PersonId: number;
-  Name: string;
-  Surname: string;
-  BirthDate: Date;
-  PhoneNumber: string;
-  Photo: Uint8Array;
+  id: number;
+  name: string;
+  surname: string;
+  birthDate: Date;
+  phoneNumber: string;
+  photoBase64: string;
 }

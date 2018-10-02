@@ -1,23 +1,29 @@
 import { APP_CONFIG } from "./education.service";
-import { Company } from "./../models/company";
 import { Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
-import { Injectable, Inject } from "@angular/core";
-import { Config } from "../models/Config";
+import { Injectable, Inject, Type } from "@angular/core";
+import { Config } from "../models/config";
+import { Company } from "../models/company";
+
+type RESOURCE_TYPE = Company;
 
 @Injectable()
 export class CompanyService {
-  private _companyList$: Observable<Company[]>;
+  private RESOURCE_NAME = "company";
+
+  private _companyList$: Observable<RESOURCE_TYPE[]>;
 
   constructor(private http: HttpClient, @Inject(APP_CONFIG) config: Config) {
-    this._companyList$ = this.http.get<Company[]>(config.api + "company");
+    this._companyList$ = this.http.get<RESOURCE_TYPE[]>(
+      config.api + this.RESOURCE_NAME
+    );
   }
 
   /**
    * Getter companyList$
    * @return {Observable<Company[]>}
    */
-  public get companyList$(): Observable<Company[]> {
+  public get companyList$(): Observable<RESOURCE_TYPE[]> {
     return this._companyList$;
   }
 }

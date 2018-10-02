@@ -1,4 +1,4 @@
 export interface SkillCategory {
-  skillCategoryId: number;
+  id: number;
   name: string;
 }
